@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Tabs, Tab } from 'react-bootstrap'
 
+// This should support gestures too
 const TabMgr = () => {
     const [tabKey, setTabKey] = useState("home")
     return (
