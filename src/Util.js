@@ -38,9 +38,10 @@ export const addUser = (name) => {
             const firstItem = {
                 items: [
                     {
-                        name: "Enter your first task here!",
+                        text: "Enter your first task here!",
                         time: "9am",
                         id: generateUUID(),
+                        done: false,
                     },
                 ],
             };
@@ -80,54 +81,64 @@ export const sampleData = [
         name: "Seb",
         tasks: [
             {
-                name: "Get ready",
+                text: "Get ready",
                 time: "7:30am",
                 id: "8fe04b05-d023-404c-b598-478f99bc1d20",
+                done: false,
             },
             {
-                name: "Start working",
+                text: "Start working",
                 time: "8am",
                 id: "8fe04b05-d023-404c-b598-478f99bc1319",
+                done: false,
             },
             {
-                name: "Eat lunch",
+                text: "Eat lunch",
                 time: "11:30am",
                 id: "8fe04b05-d023-404c-b598-478f99bc1318",
+                done: false,
             },
             {
-                name: "Walk dog",
+                text: "Walk dog",
                 time: "1:30pm",
                 id: "8fe04b05-d023-404c-b598-478f99bc1317",
+                done: false,
             },
             {
-                name: "Practice guitar",
+                text: "Practice guitar",
                 time: "3pm",
                 id: "8fe04b05-d023-404c-b598-478f99bc1316",
+                done: false,
             },
             {
-                name: "Finish work",
+                text: "Finish work",
                 time: "5pm",
                 id: "8fe04b05-d023-404c-b598-478f99bc1396",
+                done: false,
             },
             {
-                name: "Walk dog",
+                text: "Walk dog",
                 time: "6pm",
                 id: "8fe04b05-d023-404c-b598-478f99bc13915",
+                done: false,
             },
             {
-                name: "Practice guitar",
+                text: "Practice guitar",
                 time: "7pm",
                 id: "8fe04b05-d023-404c-b598-478f99bc1314",
+                done: false,
             },
             {
-                name: "Eat dinner",
+                text: "Eat dinner",
                 time: "7:30pm",
                 id: "8fe04b05-d023-404c-b598-478f99bc1313",
+                done: false,
             },
             {
-                name: "Excercise of some sort (Swim, Walk dog, etc)",
+                text: "Excercise of some sort (Swim, Walk dog, etc)",
                 time: "8pm",
                 id: "8fe04b05-d023-404c-b598-478f99bc1312",
+                done: false,
             },
         ],
     },
@@ -135,39 +146,46 @@ export const sampleData = [
         name: "Matt",
         tasks: [
             {
-                name: "Get ready",
+                text: "Get ready",
                 time: "9am",
                 id: "2faeae2f-3a28-44aa-99e5-ee8a96cb15af",
+                done: false,
             },
             {
-                name: "Youtube / Vidya",
+                text: "Youtube / Vidya",
                 time: "9:01am",
                 id: "2faeae2f-3a28-44aa-99e5-ee8a96cb1511",
+                done: false,
             },
             {
-                name: "Lunch (If applicable)",
+                text: "Lunch (If applicable)",
                 time: "11:30am",
                 id: "2faeae2f-3a28-44aa-99e5-ee8a96cb1512",
+                done: false,
             },
             {
-                name: "Apply for Jobs",
+                text: "Apply for Jobs",
                 time: "2pm",
                 id: "2faeae2f-3a28-44aa-99e5-ee8a96cb1513",
+                done: false,
             },
             {
-                name: "Vidya / TV",
+                text: "Vidya / TV",
                 time: "3pm",
                 id: "2faeae2f-3a28-44aa-99e5-ee8a96cb1514",
+                done: false,
             },
             {
-                name: "Eat dinner (If applicable)",
+                text: "Eat dinner (If applicable)",
                 time: "7:30pm",
                 id: "2faeae2f-3a28-44aa-99e5-ee8a96cb1516",
+                done: false,
             },
             {
-                name: "Vidya / TV",
+                text: "Vidya / TV",
                 time: "8pm",
                 id: "2faeae2f-3a28-44aa-99e5-ee8a96cb1517",
+                done: false,
             },
         ],
     },
@@ -175,65 +193,76 @@ export const sampleData = [
         name: "Carissa",
         tasks: [
             {
-                name: "Walk dog",
+                text: "Walk dog",
                 time: "6am",
                 id: "0f8d89b1-3baf-4075-8966-6ed9924bb64c",
+                done: false,
             },
             {
-                name: "Get ready",
+                text: "Get ready",
                 time: "8:30am",
                 id: "0f8d89b1-3baf-4075-8966-6ed9924bb612",
+                done: false,
             },
             {
-                name: "Feed dog",
+                text: "Feed dog",
                 time: "9am",
                 id: "0f8d89b1-3baf-4075-8966-6ed9924bb613",
+                done: false,
             },
             {
-                name: "Start working",
+                text: "Start working",
                 time: "11am",
                 id: "0f8d89b1-3baf-4075-8966-6ed9924bb614",
+                done: false,
             },
             {
-                name: "Eat lunch",
+                text: "Eat lunch",
                 time: "2pm",
                 id: "0f8d89b1-3baf-4075-8966-6ed9924bb615",
+                done: false,
             },
             {
-                name: "Walk dog",
+                text: "Walk dog",
                 time: "2pm",
                 id: "0f8d89b1-3baf-4075-8966-6ed9924bb616",
+                done: false,
             },
             {
-                name: "Feed dog",
+                text: "Feed dog",
                 time: "2pm",
                 id: "0f8d89b1-3baf-4075-8966-6ed9924bb617",
+                done: false,
             },
             {
-                name: "Back to work",
+                text: "Back to work",
                 time: "2:45pm",
                 id: "0f8d89b1-3baf-4075-8966-6ed9924bb618",
+                done: false,
             },
             {
-                name: "Feed dog",
+                text: "Feed dog",
                 time: "7pm",
                 id: "0f8d89b1-3baf-4075-8966-6ed9924bb619",
+                done: false,
             },
             {
-                name: "Eat dinner",
+                text: "Eat dinner",
                 time: "7:30pm",
                 id: "0f8d89b1-3baf-4075-8966-6ed9924bb620",
+                done: false,
             },
             {
-                name: "Walk dog",
+                text: "Walk dog",
                 time: "9pm",
                 id: "0f8d89b1-3baf-4075-8966-6ed9924bb621",
+                done: false,
             },
         ],
     },
 ];
 
-function generateUUID() {
+export const generateUUID = () => {
     // Public Domain/MIT
     var d = new Date().getTime(); //Timestamp
     var d2 = (performance && performance.now && performance.now() * 1000) || 0; //Time in microseconds since page-load or 0 if unsupported
@@ -252,4 +281,4 @@ function generateUUID() {
         }
         return (c === "x" ? r : (r & 0x3) | 0x8).toString(16);
     });
-}
+};

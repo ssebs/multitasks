@@ -35,7 +35,7 @@ const AddUserForm = () => {
     );
 };
 
-const EditTasksUsers = () => {
+const EditUsers = () => {
     const [data, setData] = useState(null);
 
     useEffect(() => {
@@ -50,7 +50,7 @@ const EditTasksUsers = () => {
 
     return (
         <Container>
-            <h1>Here you will edit the tasks and people.</h1>
+            <h1>Here you will edit users.</h1>
             <hr />
             Add users below:
             <AddUserForm />
@@ -71,4 +71,4 @@ const EditTasksUsers = () => {
     );
 };
 
-export default EditTasksUsers;
+export default EditUsers;
