@@ -1,26 +1,5 @@
 // Util.js - misc utils
 
-// Basic data ones
-export const loadData = () => {
-    return new Promise((resolve, reject) => {
-        // if (localStorage.getItem("data")) {
-        //     resolve(JSON.parse(localStorage.getItem("data")));
-        // } else {
-        //     reject("No data");
-        // }
-    });
-};
-
-export const saveData = (data) => {
-    return new Promise((resolve, reject) => {
-        // try {
-        //     resolve(localStorage.setItem("data", JSON.stringify(data)));
-        // } catch (err) {
-        //     reject(err);
-        // }
-    });
-};
-
 export const wipeData = () => {
     return new Promise((resolve) => {
         localStorage.clear();
@@ -28,7 +7,6 @@ export const wipeData = () => {
     });
 };
 
-// Users
 export const addUser = (name) => {
     const lName = name.toLowerCase();
     return new Promise((resolve, reject) => {
@@ -66,6 +44,12 @@ export const setUserTasks = (name, tasks) => {
     const lName = name.toLowerCase();
     return new Promise((resolve, reject) => {
         localStorage.setItem(lName, JSON.stringify(tasks));
+    });
+};
+
+export const getUserNames = () => {
+    return new Promise((resolve, reject) => {
+        resolve(Object.keys(localStorage));
     });
 };
 

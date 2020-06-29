@@ -14,7 +14,7 @@ const Header = () => {
             >
                 <Nav>
                     <LinkContainer to="/edit">
-                        <Nav.Link>Edit Tasks &amp; Users</Nav.Link>
+                        <Nav.Link>Edit Users</Nav.Link>
                     </LinkContainer>
                 </Nav>
             </Navbar.Collapse>

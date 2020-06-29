@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import { addUser, wipeData } from "../Util";
 import { Form, Button, Container } from "react-bootstrap";
@@ -13,7 +13,7 @@ const AddUserForm = () => {
         }
         addUser(name)
             .then((resp) => {
-                console.log(resp);
+                // console.log(resp);
                 window.alert(resp);
             })
             .catch((err) => window.alert(err));
@@ -36,18 +36,6 @@ const AddUserForm = () => {
 };
 
 const EditUsers = () => {
-    const [data, setData] = useState(null);
-
-    useEffect(() => {
-        // loadData()
-        //     .then((data) => {
-        //         console.log(data);
-        //     })
-        //     .catch((err) => {
-        //         console.log(err);
-        //     });
-    }, []);
-
     return (
         <Container>
             <h1>Here you will edit users.</h1>
