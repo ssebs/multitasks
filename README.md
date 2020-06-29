@@ -14,5 +14,10 @@ Multiple user daily tasks / todo list.
 ## Screenshots
 - tbd
 
+## Todo
+- edit tasks page
+- multiple users page
+- daily tasks tabs per user
+
 ## LICENSE
 [MIT](./LICENSE)
