@@ -53,17 +53,19 @@ const TasksView = (props) => {
         // console.log(tmp);
         setTasks(tmp);
         setUserTasks(props.match.params.user, tmp)
-        .then((resp) => {
-            // console.log(resp);
-        })
-        .catch((err) => console.error(err));
+            .then((resp) => {
+                // console.log(resp);
+            })
+            .catch((err) => console.error(err));
     };
 
     return (
         <div>
-            <h1>{capFirst(props.match.params.user)}'s Tasks:</h1>
+            <h1 className="text-center pt-3">
+                {capFirst(props.match.params.user)}'s Tasks:
+            </h1>
             {tasks && (
-                <div className="justify-content-center text-center">
+                <div className="justify-content-center text-center my-3">
                     {tasks.map((task) => (
                         <TaskItem
                             key={task.id}
@@ -73,7 +75,11 @@ const TasksView = (props) => {
                         />
                     ))}
                     <div className="clearfix" />
-                    <Button className="mt-2" onClick={addTaskItem}>
+                    <Button
+                        className="mt-2"
+                        variant="outline-primary"
+                        onClick={addTaskItem}
+                    >
                         + Add new item
                     </Button>
                 </div>

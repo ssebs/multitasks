@@ -1,11 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import {
-    Button,
-    Form,
-    FormControl,
-    FormCheck
-} from "react-bootstrap";
+import { Button, Form, FormControl, FormCheck } from "react-bootstrap";
 
 const TaskItem = (props) => {
     const [task, setTask] = useState(props.data);
@@ -48,11 +43,13 @@ const TaskItem = (props) => {
 
                 <FormControl
                     type="text"
-                    // as="textarea"
                     name="text"
-                    style={{ width: "256px" }}
                     onChange={handleChange}
                     value={task.text}
+                    style={{
+                        width: "256px",
+                        textDecoration: task.done ? "line-through" : "none",
+                    }}
                 />
 
                 <Button
