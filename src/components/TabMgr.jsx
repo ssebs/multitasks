@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
-import { Tabs, Tab } from 'react-bootstrap'
+import React, { useState } from "react";
+import { Tabs, Tab } from "react-bootstrap";
 
 // This should support gestures too
 const TabMgr = () => {
-    const [tabKey, setTabKey] = useState("home")
+    const [tabKey, setTabKey] = useState("home");
     return (
         <div>
-            <Tabs activeKey={tabKey} id="tabs" onSelect={k => setTabKey(k)}>
+            <Tabs activeKey={tabKey} id="tabs" onSelect={(k) => setTabKey(k)}>
                 <Tab eventKey="home" title="home">
                     <p>Home page</p>
                 </Tab>
@@ -15,7 +15,7 @@ const TabMgr = () => {
                 </Tab>
             </Tabs>
         </div>
-    )
-}
+    );
+};
 
-export default TabMgr
+export default TabMgr;
