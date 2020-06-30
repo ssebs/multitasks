@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Tabs, Tab, Container } from "react-bootstrap";
-
-import { getUserNames, capFirst } from "../Util";
-import TasksView from "./TasksView";
 import { withRouter } from "react-router-dom";
+
+import TasksView from "./TasksView";
+import { getUserNames, capFirst } from "../Util";
 
 // This should support gestures too
 const TabMgr = (props) => {
@@ -27,14 +27,14 @@ const TabMgr = (props) => {
                 onSelect={(k) => {
                     if (k === "home") {
                         props.history.push("/");
-                    }else {
-                        props.history.push(`/tasks/${k}`)
+                    } else {
+                        props.history.push(`/tasks/${k}`);
                     }
                     setTabKey(k);
                 }}
             >
                 <Tab eventKey="home" title="Home">
-                    <Container>
+                    <Container className="text-center my-3">
                         <h2>Multi-Tasks</h2>
                         <p>
                             Multi-Tasks is a web app that allows you to have
