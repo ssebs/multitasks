@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Tabs, Tab } from "react-bootstrap";
+import { Tabs, Tab, Container } from "react-bootstrap";
 
-import { getUserNames } from "../Util";
+import { getUserNames, capFirst } from "../Util";
 import TasksView from "./TasksView";
 
 // This should support gestures too
@@ -20,12 +20,22 @@ const TabMgr = () => {
     return (
         <div>
             <Tabs activeKey={tabKey} id="tabs" onSelect={(k) => setTabKey(k)}>
-                <Tab eventKey="home" title="home">
-                    <p>Home page</p>
+                <Tab eventKey="home" title="Home">
+                    <Container>
+                        <h2>Multi-Tasks</h2>
+                        <p>
+                            Multi-Tasks is a web app that allows you to have
+                            multiple To-Do lists for each person in the house.
+                        </p>
+                        <p>
+                            To Start, click "Edit Users" at the top right and
+                            add a user.
+                        </p>
+                    </Container>
                 </Tab>
                 {users &&
                     users.map((user) => (
-                        <Tab eventKey={user} title={user} key={user}>
+                        <Tab eventKey={user} title={capFirst(user)} key={user}>
                             <TasksView user={user} />
                         </Tab>
                     ))}

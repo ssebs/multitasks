@@ -15,9 +15,9 @@ const TasksView = (props) => {
         // console.log(`Load tasks for ${props.user}`);
         getUserTasks(props.user)
             .then((resp) => {
-                // console.log(resp);
+                console.log(resp);
                 setUserName(props.user)
-                setTasks(resp.items);
+                setTasks(resp);
             })
             .catch((err) => window.alert(err));
     }, [props.user]);
