@@ -38,9 +38,8 @@ const AddUserForm = () => {
 const EditUsers = () => {
     return (
         <Container>
-            <h1>Here you will edit users.</h1>
+            <h2 className="my-3">Add a user below:</h2>
             <hr />
-            Add users below:
             <AddUserForm />
             <hr />
             <Button
