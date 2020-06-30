@@ -13,16 +13,15 @@ export const addUser = (name) => {
         if (localStorage.getItem(lName)) {
             reject("User already exists");
         } else {
-            const firstItem = {
-                items: [
-                    {
-                        text: "Enter your first task here!",
-                        time: "9am",
-                        id: generateUUID(),
-                        done: false,
-                    },
-                ],
-            };
+            const firstItem = [
+                {
+                    text: "Enter your first task here!",
+                    time: "9am",
+                    id: generateUUID(),
+                    done: false,
+                },
+            ];
+
             localStorage.setItem(lName, JSON.stringify(firstItem));
             resolve("User added");
         }

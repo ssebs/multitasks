@@ -3,9 +3,10 @@ import { Tabs, Tab, Container } from "react-bootstrap";
 
 import { getUserNames, capFirst } from "../Util";
 import TasksView from "./TasksView";
+import { withRouter } from "react-router-dom";
 
 // This should support gestures too
-const TabMgr = () => {
+const TabMgr = (props) => {
     const [users, setUsers] = useState(null);
     const [tabKey, setTabKey] = useState("home");
 
@@ -13,13 +14,25 @@ const TabMgr = () => {
         getUserNames()
             .then((resp) => {
                 setUsers(resp);
+                setTabKey(props.match.params.user);
             })
             .catch((err) => console.error(err));
-    }, []);
+    }, [props.match.params.user]);
 
     return (
         <div>
-            <Tabs activeKey={tabKey} id="tabs" onSelect={(k) => setTabKey(k)}>
+            <Tabs
+                activeKey={tabKey}
+                id="tabs"
+                onSelect={(k) => {
+                    if (k === "home") {
+                        props.history.push("/");
+                    }else {
+                        props.history.push(`/tasks/${k}`)
+                    }
+                    setTabKey(k);
+                }}
+            >
                 <Tab eventKey="home" title="Home">
                     <Container>
                         <h2>Multi-Tasks</h2>
@@ -44,4 +57,4 @@ const TabMgr = () => {
     );
 };
 
-export default TabMgr;
+export default withRouter(TabMgr);
