@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 
 import { Button, Form, FormControl, FormCheck } from "react-bootstrap";
+import SoftKeyboard from "./SoftKeyboard";
 
 const TaskItem = (props) => {
     const [task, setTask] = useState(props.data);
+    const [isKBVisible, setIsKBVisible] = useState(false);
 
     useEffect(() => {
         // console.log(props.data);
@@ -45,6 +47,8 @@ const TaskItem = (props) => {
                     type="text"
                     name="text"
                     onChange={handleChange}
+                    onFocus={(e) => setIsKBVisible(true)}
+                    // onBlur={(e) => setIsKBVisible(false)}
                     value={task.text}
                     style={{
                         width: "256px",
@@ -63,6 +67,28 @@ const TaskItem = (props) => {
                     X
                 </Button>
             </Form>
+            {isKBVisible && (
+                <SoftKeyboard
+                    onChange={(txt) => {
+                        // setTask(txt);
+                        const e = {
+                            target: {
+                                value: txt,
+                                name: "text",
+                            },
+                        };
+                        console.log(e);
+                        handleChange(e);
+                        // handleChange({"e.target.value": txt, "e.target.name": "text"})
+                    }}
+                    onKeyPress={(k) => {
+                        if (k === "{enter}") {
+                            setIsKBVisible(false);
+                        }
+                        console.log(k);
+                    }}
+                />
+            )}
         </div>
     );
 };
