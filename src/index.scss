@@ -1,7 +1,45 @@
 $primary: #41afff;
+$bg-v-dark: #272727;
+$bg-dark: #2d2d2d;
+$light: #e2e2e2;
 
 @import "~bootstrap/scss/bootstrap";
 
 .mw-300 {
     max-width: 300px;
+}
+// Dark mode
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link {
+    background-color: $bg-dark;
+    color: $light;
+}
+.form-control {
+    background-color: $bg-dark;
+    color: $light;
+}
+
+.bg-light {
+    background-color: $bg-dark !important;
+}
+
+body {
+    background-color: $bg-v-dark;
+    color: $light;
+}
+
+.simple-keyboard.myTheme1 {
+    background-color: $bg-dark;
+    border-radius: 0;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.simple-keyboard.myTheme1 .hg-button {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
 }
